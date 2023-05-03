@@ -1,17 +1,35 @@
-import React, { useState } from "react";
-import { BiMenuAltRight } from "react-icons/bi";
+import React, { useEffect } from "react";
+import { AiFillApple, AiOutlineClose } from "react-icons/ai";
 import { BsGooglePlay } from "react-icons/bs";
-import { AiFillApple } from "react-icons/ai";
-import MobileMenu from "./MobileMenu";
-const Header = () => {
-  const [showModal, setShowModal] = useState(false);
+
+type Props = {
+  showModal: boolean;
+  setShowModal: (showModal: boolean) => void;
+};
+
+const MobileMenu = ({ showModal, setShowModal }: Props) => {
+  const handleClose = (e: any) => {
+    if (e.target.id === "modelContainer") {
+      setShowModal(false);
+    }
+  };
+
+  if (!showModal) return null;
   return (
-    <>
-      <div className="w-full h-32 md:h-44  text-white flex  lg:justify-around justify-between px-4 lg:px-8 items-center">
-        <div className="w-1/2">
-          <h1 className="text-4xl font-head font-bold cursor-grab">Sharira</h1>
+    <div
+      className="fixed inset-0 z-50 flex  justify-center bg-black  text-white"
+      id="modelContainer"
+      onClick={handleClose}
+    >
+      <div>
+        <div className="w-screen h-32 text-white flex justify-end px-4  items-center">
+          <AiOutlineClose
+            size={30}
+            onClick={() => setShowModal(false)}
+            className="lg:hidden cursor-pointer animate-none transform hover:scale-120 hover:animate-pulse"
+          />
         </div>
-        <div className="hidden lg:flex w-1/2 justify-evenly items-center">
+        <div className="flex flex-col w-full h-1/2 justify-evenly items-center">
           <div className="cursor-pointer">About us</div>
           <div className="cursor-pointer">Privacy</div>
           <div className="cursor-pointer">Community</div>
@@ -38,22 +56,9 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <button
-          onClick={() => setShowModal(true)}
-          className="lg:hidden cursor-pointer animate-none transform hover:scale-110 hover:animate-pulse"
-        >
-          <BiMenuAltRight size={30} />
-        </button>
       </div>
-      <div
-        className={`transform ${
-          showModal ? "translate-x-0" : "translate-x-full"
-        } fixed right-0 top-0 h-full w-full z-50 overflow-x-hidden transition-all duration-500`}
-      >
-        <MobileMenu setShowModal={setShowModal} showModal={showModal} />
-      </div>
-    </>
+    </div>
   );
 };
 
-export default Header;
+export default MobileMenu;
