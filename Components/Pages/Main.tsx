@@ -1,12 +1,13 @@
-import React from "react";
 import Header from "../Header/Header";
-
-type Props = {};
-
-const Main = (props: Props) => {
+import SectionA from "../../Components/Main/SectionA";
+import SectionB from "../Main/SectionB";
+const Main = () => {
   return (
     <>
-      <Header />
+      <main className="font-main">
+        <SectionA />
+      </main>
+      <SectionB />
     </>
   );
 };

@@ -12,6 +12,7 @@ module.exports = {
       },
       fontFamily: {
         head: ["QueensidesMedium", "sans-serif"],
+        main: ["Poppins", "sans-serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
