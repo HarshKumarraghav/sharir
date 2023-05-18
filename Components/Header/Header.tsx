@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <div className="w-full h-32 md:h-44 font-main text-white flex lg:justify-around justify-between px-4 lg:px-8 items-center">
         <div className="w-1/2">
-          <h1 className="text-4xl font-head font-bold cursor-grab">Sharira</h1>
+          <h1 className="text-4xl font-head font-bold cursor-grab">Sharir</h1>
         </div>
         <div className="hidden lg:flex w-1/3 justify-evenly items-center">
           <div className="cursor-pointer">About us</div>

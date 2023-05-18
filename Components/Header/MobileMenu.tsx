@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
-import { AiFillApple, AiOutlineClose } from "react-icons/ai";
-import { BsGooglePlay } from "react-icons/bs";
-
+import React from "react";
+import Image from "next/image";
+import AppleDownload from "../../public/Images/Downloads/appledownload.svg";
+import GoogleDownload from "../../public/Images/Downloads/googleplay.svg";
+import { AiOutlineClose } from "react-icons/ai";
 type Props = {
   showModal: boolean;
   setShowModal: (showModal: boolean) => void;
@@ -33,27 +34,11 @@ const MobileMenu = ({ showModal, setShowModal }: Props) => {
           <div className="cursor-pointer">About us</div>
           <div className="cursor-pointer">Privacy</div>
           <div className="cursor-pointer">Community</div>
-          <div className="px-2 py-1 border-white border-2 rounded-lg flex  items-center cursor-pointer">
-            <div>
-              <AiFillApple size={30} />
-            </div>
-            <div>
-              <p className="text-[10px] leading-1/2">Download on the</p>
-              <p className="font-semibold text-md text-center leading-1/2">
-                App Store
-              </p>
-            </div>
+          <div className="cursor-pointer">
+            <Image src={AppleDownload} alt="" />
           </div>
-          <div className="px-2 py-1 border-white border-2 rounded-lg flex  items-center cursor-pointer">
-            <div>
-              <BsGooglePlay size={23} />
-            </div>
-            <div className="leading-1/2">
-              <p className="text-[10px] leading-1/2">Download on the</p>
-              <p className="font-semibold text-md text-center leading-1/2">
-                Play Store
-              </p>
-            </div>
+          <div className="cursor-pointer">
+            <Image src={GoogleDownload} alt="" />
           </div>
         </div>
       </div>
